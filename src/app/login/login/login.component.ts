@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 // JSON
 import usersList from 'src/assets/json/users.json';
+import { UsersService } from '../../users/users.service';
 
 
 @Component({
@@ -19,10 +20,13 @@ export class LoginComponent implements OnInit {
   users: any = usersList;
   unregistered: boolean = false;
   invalid: boolean = false;
+  username: string;
+  password: string;
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    public userService: UsersService
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +39,11 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     if (this.loginForm.invalid) { return }
-    // TODO : Falta integrar el servicio para autentificar al usuario
+    const user = { email: this.username, password: this.password };
+    this.userService.login(user).subscribe(data => {
+      console.log('nos devuelve el token');
+      console.log(data);
+    });
     // JSON simulando usuarios
     var userLogin = this.loginForm.value.username;
     var filterJson = this.users.filter(function (user) { return user.first_name === userLogin });

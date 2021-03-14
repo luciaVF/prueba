@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { LoginModule } from './login/login.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { LoginModule } from './login/login.module';
     FormsModule,
     ReactiveFormsModule,
     PrincipalModule,
-    LoginModule
+    LoginModule,
+    HttpClientModule 
 
 
   ],

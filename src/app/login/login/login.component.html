@@ -6,6 +6,7 @@
       <input type="text"
              class="form-control"
              placeholder="Username"
+              [(ngModel)]="username"
              formControlName="username" />
       <hr class="hr-line">
       <div class="input-group-append form__required" *ngIf="loginForm.get('username').invalid">
@@ -19,6 +20,7 @@
       <input type="password"
              class="form-control"
              placeholder="Password"
+             [(ngModel)]="username"
              formControlName="password" />
       <hr class="hr-line">
       <div class="input-group-append form__required" *ngIf="loginForm.get('password').invalid">

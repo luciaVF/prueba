@@ -25,6 +25,7 @@
     "bootstrap": "^4.5.0",
     "jest-marbles": "^2.5.1",
     "jquery": "^3.5.1",
+    "ngx-cookie-service": "^11.0.2",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^2.0.0",
