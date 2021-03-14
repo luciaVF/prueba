@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { PrincipalModule } from './components/principal/principal.module';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 // Components
 import { AppComponent } from './app.component';
@@ -11,6 +14,9 @@ import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterModule } from './register/register.module';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { VehiclesModule } from './vehicles/vehicles.module';
 
 
 @NgModule({
@@ -26,12 +32,17 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatTableModule,
+    MatInputModule,
+    MatButtonModule,
     ReactiveFormsModule,
     PrincipalModule,
     LoginModule,
     HttpClientModule,
     RegisterModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    VehiclesModule,
 
 
   ],
