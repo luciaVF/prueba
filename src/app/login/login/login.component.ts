@@ -46,8 +46,8 @@ export class LoginComponent implements OnInit {
     const user = { email: this.username, password: this.password };
     var userLogin = this.loginForm.value.username;
     this.userService.login(user).subscribe(data => {
-      console.log('nos devuelve el token');
-      console.log(data);
+      this.userService.setToken(data.token);
+      this.router.navigate(['/principal/ships']);
     }, error => {
         //llamamos al servicio que hemos creado para consumir ese JSON
         // simulamos el login de usuarios con un Json dentro de la aplicación cuando nos falla la api (esto es solo para pruebas y que funcione la aplicacion)
@@ -62,17 +62,9 @@ export class LoginComponent implements OnInit {
         });
     });
 
- 
-
-    
-   
-
-   
-
-   
-
-  
-    // var filterJson = this.users.filter(function (user) { return user.first_name === userLogin });
+    function registrarUser(){
+      console.log('registro');
+    }
    
   }
 }

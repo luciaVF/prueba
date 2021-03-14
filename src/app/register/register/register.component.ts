@@ -1,8 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-
-// JSON
 import usersList from 'src/assets/json/users.json';
 
 @Component({

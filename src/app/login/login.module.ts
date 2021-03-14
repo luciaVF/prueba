@@ -8,12 +8,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [LoginComponent],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class LoginModule { }

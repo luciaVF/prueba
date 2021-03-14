@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\login",
+    "\\src\\app\\register",
+    "\\src\\app\\register\\register",
+    "\\src\\assets",
+    "\\src\\environments",
+    "\\src\\shared",
+    "\\src\\shared\\modelos"
+  ],
+  "SelectedNode": "\\src\\app\\register\\register\\register.component.html",
+  "PreviewInSolutionExplorer": false
+}
