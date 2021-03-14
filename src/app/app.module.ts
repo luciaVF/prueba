@@ -17,16 +17,14 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { VehiclesModule } from './vehicles/vehicles.module';
+import { PlanetsComponent } from './planets/planets.component';
+import { PlanetsModule } from './planets/planets.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent,
-
- 
-
-  
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +41,7 @@ import { VehiclesModule } from './vehicles/vehicles.module';
     RouterModule,
     BrowserAnimationsModule,
     VehiclesModule,
+    PlanetsModule
 
 
   ],
