@@ -3,6 +3,7 @@ export class Usuarios {
   last_name: string;
   username: string;
   email: string;
+  password: string;
 
   constructor() { }
 }

@@ -20,6 +20,10 @@ export class UsersService {
     return this.http.get<Usuarios[]>(this.url);
   }
 
+  register(user: any): Observable<any> {
+    return this.http.post("https://reqres.in/api/register", user);
+  }
+
   setToken(token: string) {
     this.cookies.set("token", token);
   }
