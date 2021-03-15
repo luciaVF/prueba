@@ -58,4 +58,8 @@ export class ShipsDetailsComponent implements OnInit {
     this.starship_class = details.starship_class
   }
 
+  abrirModificar() {
+    console.log('modifico');
+  }
+
 }

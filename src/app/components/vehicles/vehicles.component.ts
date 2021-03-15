@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { ShipsService } from '../services/ships.service';
+import { ShipsService } from '../../services/ships.service';
 import { Vehiculo } from './modelos/vehiculo';
 import { Vehiculos } from './modelos/vehiculos';
 

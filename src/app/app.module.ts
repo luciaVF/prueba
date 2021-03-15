@@ -15,10 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegisterModule } from './register/register.module';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VehiclesComponent } from './vehicles/vehicles.component';
-import { VehiclesModule } from './vehicles/vehicles.module';
-import { PlanetsComponent } from './planets/planets.component';
-import { PlanetsModule } from './planets/planets.module';
+
+import { VehiclesModule } from './components/vehicles/vehicles.module';
+import { PlanetsModule } from './components/planets/planets.module';
 
 
 @NgModule({

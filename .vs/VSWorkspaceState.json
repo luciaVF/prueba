@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
+    "\\src\\app\\components\\principal",
     "\\src\\app\\components\\ships",
-    "\\src\\app\\components\\ships\\ships-details",
-    "\\src\\app\\planets",
-    "\\src\\app\\planets\\modelos",
-    "\\src\\assets",
-    "\\src\\assets\\img"
+    "\\src\\app\\users",
+    "\\src\\app\\vehicles",
+    "\\src\\shared",
+    "\\src\\shared\\modelos"
   ],
-  "SelectedNode": "\\src\\assets\\img\\imagen1.jpg",
+  "SelectedNode": "\\src\\app\\vehicles\\vehicles.module.ts",
   "PreviewInSolutionExplorer": false
 }

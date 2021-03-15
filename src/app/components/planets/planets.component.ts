@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
-import { PlanetsService } from '../services/planets.service';
+import { PlanetsService } from '../../services/planets.service';
 import { Planeta } from './modelos/planeta';
 import { Planetas } from './modelos/planetas';
 
