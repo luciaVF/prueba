@@ -8,8 +8,8 @@ import { ShipsComponent } from '../ships/ships.component';
 import { PageOneComponent } from '../page-one/page-one.component';
 import { PageTwoComponent } from '../page-two/page-two.component';
 import { ShipsDetailsComponent } from '../ships/ships-details/ships-details.component';
-import { PlanetsModule } from '../../planets/planets.module';
-import { VehiclesModule } from '../../vehicles/vehicles.module';
+import { VehiclesModule } from '../vehicles/vehicles.module';
+import { PlanetsModule } from '../planets/planets.module';
 
 @NgModule({
   declarations: [
