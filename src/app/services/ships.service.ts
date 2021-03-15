@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
+import { Ships } from '../components/ships/modelos/ships';
+import { Ship } from '../components/ships/modelos/ship';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShipsService {
+  private emitShip = new BehaviorSubject<Ship>(null);
+  emitShip$ = this.emitShip.asObservable();
+
+  private emitShips = new BehaviorSubject<Ships>(null);
+  emitShips$ = this.emitShips.asObservable();
 
   urlShips: string = 'https://swapi.dev/api/starships/';
   urlVehicles: string = 'https://swapi.dev/api/vehicles/';
@@ -36,6 +43,13 @@ export class ShipsService {
     return this.http.get(this.urlImages + `${id}.jpg`).pipe(
       map(data => { return data })
     );
+  }
+
+  enviarShip(emitShip) {
+    this.emitShip.next(emitShip);
+  }
+  enviarShips(emitShips) {
+    this.emitShips.next(emitShips);
   }
 }
 

@@ -1,14 +1,24 @@
+
+
 <nav class="navbar navbar-dark principalHeader">
-    <div class="dropdown">
-        <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown"></i>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" [routerLink]="'ships'">Ships</a>
-            <a class="dropdown-item" [routerLink]="'vehicles'">Vehicles</a>
-            <a class="dropdown-item" [routerLink]="'planets'">Planets</a>
-            <a class="dropdown-item" [routerLink]="''">Login</a>
-        </div>
+  <div class="dropdown">
+    <i class="fas fa-bars" id="dropdownMenuButton" data-toggle="dropdown"></i>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" [routerLink]="'ships'">Ships</a>
+      <a class="dropdown-item" [routerLink]="'vehicles'">Vehicles</a>
+      <a class="dropdown-item" [routerLink]="'planets'">Planets</a>
+      <a class="dropdown-item" [routerLink]="''">Login</a>
     </div>
+  </div>
 </nav>
+<div class="col-md-5 col-md-offset-5 container mt-5">
+  <h3>Bienvenidos al mundo <strong>Star Wars, en esta aplicaci&oacute;n podr&aacute;s:</strong></h3>
+  <ol>
+    <li>Modificar cada una de las card, haciendo click sobre ellas</li>
+    <li>consultar los datos mas relevantes de planetas, naves y buques</li>
+    <li>Eliminar alguna de las ocurrencias de las tablas</li>
+  </ol>
+</div>
 
 <router-outlet></router-outlet>
 

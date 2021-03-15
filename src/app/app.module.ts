@@ -20,10 +20,11 @@ import { VehiclesModule } from './components/vehicles/vehicles.module';
 import { PlanetsModule } from './components/planets/planets.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalComponent
+    PrincipalComponent,
   ],
   imports: [
     BrowserModule,
