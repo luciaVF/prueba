@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ShipsService } from '../../../services/ships.service';
 declare var $: any;
 
 
@@ -18,7 +19,7 @@ export class ShipsDetailsComponent implements OnInit {
   modelDetails: string = '';
   starship_class: string = '';
 
-  constructor() { 
+  constructor(private shipsService: ShipsService) { 
   }
   
   ngOnInit(): void {
@@ -29,10 +30,21 @@ export class ShipsDetailsComponent implements OnInit {
       };
   }
 
-  getStarshipId(url) {
-    this.shipId = url.slice(0, -1)
+  getStarshipId(url: string) {
+
+    // en caso de usar la api, implementariamos la llamada que tenems en el service pasandole el id de la nave
+    // this.shipsService.getImage(this.shipId) -->le pasamos el id de la nave
+    // como solo funciona para un id, las cogo de mi assets
+    const ruta =  './';
+    //  this.shipId = url.slice(0, -1);
+    if (+url.length === 33) {
+      this.shipId = url.substring(31, 32);
+    } else {
+      this.shipId = url.substring(31, 33);
+    }
+    
     const urlImage = `${this.shipId}.jpg`
-    return urlImage !== "";
+    return ruta + 'assets/img/ships/imagen' + this.shipId + '.jpg';
   }
 
   pageChanged(event){
