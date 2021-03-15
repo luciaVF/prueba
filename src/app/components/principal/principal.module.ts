@@ -10,6 +10,7 @@ import { PageTwoComponent } from '../page-two/page-two.component';
 import { ShipsDetailsComponent } from '../ships/ships-details/ships-details.component';
 import { VehiclesModule } from '../vehicles/vehicles.module';
 import { PlanetsModule } from '../planets/planets.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { PlanetsModule } from '../planets/planets.module';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     PrincipalComponentsRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
