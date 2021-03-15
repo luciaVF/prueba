@@ -6,11 +6,11 @@
     "\\src\\app\\components",
     "\\src\\app\\components\\ships",
     "\\src\\app\\components\\ships\\ships-details",
-    "\\src\\app\\vehicles",
-    "\\src\\app\\vehicles\\modelos",
-    "\\src\\shared",
-    "\\src\\shared\\modelos"
+    "\\src\\app\\planets",
+    "\\src\\app\\planets\\modelos",
+    "\\src\\assets",
+    "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\assets\\img\\imagen1.jpg",
   "PreviewInSolutionExplorer": false
 }

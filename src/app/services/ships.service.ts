@@ -10,6 +10,7 @@ export class ShipsService {
 
   urlShips: string = 'https://swapi.dev/api/starships/';
   urlVehicles: string = 'https://swapi.dev/api/vehicles/';
+  urlImages: string ='https://starwars-visualguide.com/assets/img/starships/'
   headerDict = {
     'Authorization': 'none',
     'Access-Control-Allow-Origin': '*'
@@ -31,4 +32,10 @@ export class ShipsService {
       map(data => { return data })
     );
   }
+  getImage(id: string): Observable<any> {
+    return this.http.get(this.urlImages + `${id}.jpg`).pipe(
+      map(data => { return data })
+    );
+  }
 }
+
