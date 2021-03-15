@@ -2,7 +2,6 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatTableModule } from "@angular/material/table";
-import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 import { PlanetsComponent } from "./planets.component";
 
@@ -10,11 +9,12 @@ import { PlanetsComponent } from "./planets.component";
   declarations: [PlanetsComponent],
   imports: [
     CommonModule,
-    BrowserModule,
     ReactiveFormsModule,
     RouterModule,
     FormsModule,
     MatTableModule
-  ]
+  ],
+  exports: [
+    PlanetsComponent]
 })
 export class PlanetsModule { }
