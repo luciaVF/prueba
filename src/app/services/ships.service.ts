@@ -4,16 +4,22 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { Ships } from '../components/ships/modelos/ships';
 import { Ship } from '../components/ships/modelos/ship';
+import { Vehiculos } from '../components/vehicles/modelos/vehiculos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShipsService {
+
+  //creamos los behaviorSubject que necesitamos para tener actualizadas las listas
   private emitShip = new BehaviorSubject<Ship>(null);
   emitShip$ = this.emitShip.asObservable();
 
   private emitShips = new BehaviorSubject<Ships>(null);
   emitShips$ = this.emitShips.asObservable();
+
+  private emitVehicles = new BehaviorSubject<Vehiculos>(null);
+  emitVehicles$ = this.emitVehicles.asObservable();
 
   urlShips: string = 'https://swapi.dev/api/starships/';
   urlVehicles: string = 'https://swapi.dev/api/vehicles/';
@@ -48,8 +54,14 @@ export class ShipsService {
   enviarShip(emitShip) {
     this.emitShip.next(emitShip);
   }
+
+
   enviarShips(emitShips) {
     this.emitShips.next(emitShips);
+  }
+
+  enviarVehicles(emitVehicles) {
+    this.emitVehicles.next(emitVehicles);
   }
 }
 
