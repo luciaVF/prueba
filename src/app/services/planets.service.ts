@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
+import { Planetas } from '../components/planets/modelos/planetas';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,8 @@ export class PlanetsService {
 
   constructor(private http: HttpClient) { }
 
-  getPlanets(): Observable<any> {
-    return this.http.get(this.urlPlanets).pipe(
+  getPlanets(): Observable<Planetas> {
+    return this.http.get<Planetas>(this.urlPlanets).pipe(
       map(data => { return data })
     );
   }

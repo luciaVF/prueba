@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { VehiclesModule } from './components/vehicles/vehicles.module';
 import { PlanetsModule } from './components/planets/planets.module';
+import { PreviousRouteService } from '../shared/navegation/previous-route.service';
 
 
 
@@ -45,7 +46,7 @@ import { PlanetsModule } from './components/planets/planets.module';
 
 
   ],
-  providers: [],
+  providers: [PreviousRouteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,6 +12,7 @@ import { VehiclesModule } from '../vehicles/vehicles.module';
 import { PlanetsModule } from '../planets/planets.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShipDefinitivoComponent } from '../ship-definitivo/ship-definitivo.component';
+import { PreviousRouteService } from '../../../shared/navegation/previous-route.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ShipDefinitivoComponent } from '../ship-definitivo/ship-definitivo.comp
     NgxPaginationModule,
     PlanetsModule,
     VehiclesModule
-  ]
+  ],
+  providers: [PreviousRouteService]
 })
 export class PrincipalModule { }

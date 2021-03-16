@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShipsService } from '../../services/ships.service';
+import { Ships } from '../ships/modelos/ships';
 
 @Component({
   selector: 'app-ship-definitivo',
@@ -7,7 +8,7 @@ import { ShipsService } from '../../services/ships.service';
   styleUrls: ['./ship-definitivo.component.scss']
 })
 export class ShipDefinitivoComponent implements OnInit {
-  dataList: any;
+  dataList = new Ships;
   config: any;
   shipId: string = '';
   url: string = '';
@@ -21,7 +22,7 @@ export class ShipDefinitivoComponent implements OnInit {
     /**Behaviour Subject nos permite utilizar una característica realmente útil y que es la de poder "recodar¨ el último valor emitido por el Observable a todas las nuevas subscripciones, al margen del momento temporal en que éstas se establezcan, actuando como un mencanismo de "sincronización" entre todas**/
     this.shipsService.emitShips$.subscribe(opcion => {
       if (opcion) {
-        this.dataList = opcion.results;    //recogemos el subject, siempre esta disponible para actuar sobre él
+        this.dataList.results = opcion.results;    //recogemos el subject, siempre esta disponible para actuar sobre él
       }
     });
 
@@ -29,7 +30,7 @@ export class ShipDefinitivoComponent implements OnInit {
       this.config = {
         itemsPerPage: 5,
         currentPage: 1,
-        totalItems: this.dataList.length
+        totalItems: this.dataList.results.length
       };
     } else {
       this.mostrarMensaje = true;

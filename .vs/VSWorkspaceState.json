@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\principal",
+    "\\src\\app\\components\\ship-definitivo",
     "\\src\\app\\components\\ships",
-    "\\src\\app\\users",
-    "\\src\\app\\vehicles",
-    "\\src\\shared",
-    "\\src\\shared\\modelos"
+    "\\src\\app\\components\\ships\\modelos",
+    "\\src\\app\\components\\vehicles",
+    "\\src\\app\\components\\vehicles\\modelos",
+    "\\src\\app\\users"
   ],
-  "SelectedNode": "\\src\\app\\vehicles\\vehicles.module.ts",
+  "SelectedNode": "\\src\\app\\components\\principal\\principal.module.ts",
   "PreviewInSolutionExplorer": false
 }

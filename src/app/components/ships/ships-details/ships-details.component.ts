@@ -29,7 +29,6 @@ export class ShipsDetailsComponent implements OnInit {
   modeloEnvio: string = '';
   starshipEnvio: string = '';
   nameEnvio: string = '';
-  filterShip: any;
   detalle: Ship;
 
   constructor(private shipsService: ShipsService,
@@ -110,7 +109,6 @@ export class ShipsDetailsComponent implements OnInit {
 
       //enviamos la nueva lista para tenerla actualizada en el subject y que se actualicen todos los componentes que están subscritos a esta lista.
       this.shipsService.enviarShips(this.dataList);
-      this.ngOnInit();
      
     }
   }

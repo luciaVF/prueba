@@ -34,17 +34,16 @@ export class ShipsService {
   
   constructor( private http: HttpClient ) {}
 
-  getShips(): Observable<any>{
-    return this.http.get(this.urlShips).pipe( 
-      map( data => { return data })
-      );
+  getShips(): Observable<Ships>{
+    return this.http.get<Ships>(this.urlShips, { headers: { 'content-type': 'application/x-www-form-urlencoded' } });
   }
 
-  getVehicles(): Observable<any> {
-    return this.http.get(this.urlVehicles).pipe(
+  getVehicles(): Observable<Vehiculos> {
+    return this.http.get<Vehiculos>(this.urlVehicles).pipe(
       map(data => { return data })
     );
   }
+
   getImage(id: string): Observable<any> {
     return this.http.get(this.urlImages + `${id}.jpg`).pipe(
       map(data => { return data })

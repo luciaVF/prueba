@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShipsService } from 'src/app/services/ships.service';
+import { PreviousRouteService } from '../../../shared/navegation/previous-route.service';
 
 @Component({
   selector: 'app-ships',
@@ -11,12 +12,22 @@ export class ShipsComponent implements OnInit {
   public dataList: any = [];
   
 
-  constructor( private shipsService: ShipsService) {}
+  constructor(private shipsService: ShipsService,
+    private previousRoute: PreviousRouteService,) { }
 
   ngOnInit(): void {
+    if (this.previousRoute.getPreviousUrl().includes('/principal/shipsDefinitivo')) {
+        // sacamos los datos del obervable, no hacemos la llamada al servicio para seguir con los datos que teniamos modificados
+      this.shipsService.emitShips$.subscribe(opcion => {
+        this.dataList = opcion;  //recogemos el subject emitido del detalle
+      });
+
+    } else {
       this.shipsService.getShips().subscribe((ships) => {
         this.dataList = ships;
         console.log('SHIPS -->', this.dataList.results)
       })
+    }
+    
     }
 }
