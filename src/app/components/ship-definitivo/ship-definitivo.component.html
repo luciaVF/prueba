@@ -5,7 +5,7 @@
 
 <div *ngIf="!mostrarMensaje">
   <div class="container">
-    <div class="ship" *ngFor="let ships of dataList.results | paginate: config; ; let i = index">
+    <div class="ship" *ngFor="let ships of dataList | paginate: config; ; let i = index">
       <div class="panel-heading">
         <h3 class="panel-title">{{ships.name}}</h3>
       </div>

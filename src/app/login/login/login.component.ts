@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 // JSON
 import usersList from 'src/assets/json/users.json';
 import { Usuarios } from '../../../shared/modelos/usuarios';
-import { UsersService } from '../../users/users.service';
+import { UsersService } from '../../../shared/users/users.service';
 
 
 @Component({

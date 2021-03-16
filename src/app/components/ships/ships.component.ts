@@ -16,10 +16,29 @@ export class ShipsComponent implements OnInit {
     private previousRoute: PreviousRouteService,) { }
 
   ngOnInit(): void {
-    if (this.previousRoute.getPreviousUrl().includes('/principal/shipsDefinitivo')) {
+    this.shipsService.emitShips$.subscribe(opcion => {
+      if (opcion) {
+        this.dataList = opcion;  //recogemos el subject emitido del detalle
+      } else {
+        this.shipsService.getShips().subscribe((ships) => {
+          this.dataList = ships;
+          console.log('SHIPS -->', this.dataList.results)
+        })
+      }
+    });
+
+    // esta parte la habia creado para recoger la url y llamar al subject , pero no hace falta 
+    /*if (this.previousRoute.getPreviousUrl().includes('/principal/shipsDefinitivo')) {
         // sacamos los datos del obervable, no hacemos la llamada al servicio para seguir con los datos que teniamos modificados
       this.shipsService.emitShips$.subscribe(opcion => {
-        this.dataList = opcion;  //recogemos el subject emitido del detalle
+        if (opcion) {
+          this.dataList = opcion;  //recogemos el subject emitido del detalle
+        } else {
+          this.shipsService.getShips().subscribe((ships) => {
+            this.dataList = ships;
+            console.log('SHIPS -->', this.dataList.results)
+          })
+        }
       });
 
     } else {
@@ -27,7 +46,7 @@ export class ShipsComponent implements OnInit {
         this.dataList = ships;
         console.log('SHIPS -->', this.dataList.results)
       })
-    }
+    }*/
     
     }
 }

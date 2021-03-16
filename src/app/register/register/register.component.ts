@@ -4,7 +4,8 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import usersList from 'src/assets/json/users.json';
 import { Usuarios } from '../../../shared/modelos/usuarios';
-import { UsersService } from '../../users/users.service';
+import { UsersService } from '../../../shared/users/users.service';
+
 
 @Component({
   selector: 'app-register',
