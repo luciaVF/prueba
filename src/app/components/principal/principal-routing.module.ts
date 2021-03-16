@@ -6,6 +6,7 @@ import { PageTwoComponent } from '../page-two/page-two.component';
 import { PrincipalComponent } from './principal.component';
 import { VehiclesComponent } from '../vehicles/vehicles.component';
 import { PlanetsComponent } from '../planets/planets.component';
+import { ShipDefinitivoComponent } from '../ship-definitivo/ship-definitivo.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent,
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'ships', component: ShipsComponent },
     { path: 'vehicles', component: VehiclesComponent },
     { path: 'planets', component: PlanetsComponent },
+    { path: 'shipsDefinitivo', component: ShipDefinitivoComponent },
   ] }
 ];
 
