@@ -25,8 +25,10 @@ export class ShipsDetailsComponent implements OnInit {
   starship_class: string = '';
   modelo: string = '';
   starship: string = '';
+  name : string = '';
   modeloEnvio: string = '';
   starshipEnvio: string = '';
+  nameEnvio: string = '';
   filterShip: any;
   detalle: Ship;
 
@@ -35,11 +37,6 @@ export class ShipsDetailsComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    /**Behaviour Subject nos permite utilizar una característica realmente útil y que es la de poder "recodar¨ el último valor emitido por el Observable a todas las nuevas subscripciones, al margen del momento temporal en que éstas se establezcan, actuando como un mencanismo de "sincronización" entre todas**/
-    this.shipsService.emitShips$.subscribe(opcion => {
-      this.filterShip = opcion;    //recogemos el subject, siempre esta disponible para actuar sobre él
-    });
-
       this.config = {
         itemsPerPage: 5,
         currentPage: 1,
@@ -49,9 +46,11 @@ export class ShipsDetailsComponent implements OnInit {
 
     this.modifyForm = this.fb.group({
       modelo: ['', [Validators.required]],
-      starship: ['', [Validators.required]]
+      starship: ['', [Validators.required]],
+      name: ['', [Validators.required]]
     });
   }
+
 
   getStarshipId(url: string) {
 
@@ -76,7 +75,6 @@ export class ShipsDetailsComponent implements OnInit {
 
   openDetails(details) {
     $("#exampleModal").modal('show');
-
     this.titleDetails = details.name;
     this.modelDetails = details.model;
     this.starship_class = details.starship_class;
@@ -84,7 +82,7 @@ export class ShipsDetailsComponent implements OnInit {
     const detalleEnvio = new Ship();
     detalleEnvio.name = details.name;
     detalleEnvio.model = details.model;
-    this.shipsService.enviarShip(detalleEnvio);  // 
+    this.shipsService.enviarShip(detalleEnvio);  //enviamos el detalle que hemos modificado 
 
   }
 
@@ -100,16 +98,19 @@ export class ShipsDetailsComponent implements OnInit {
     if (this.modifyForm.valid) { // recogemos los datos modificados
       this.modeloEnvio = this.modelo;
       this.starshipEnvio = this.starship;
+      this.nameEnvio = this.name;
       //recorremos la lista
-      this.filterShip.results.forEach(x => { // cuando encontramos la nave modificada cambiamos sus valores por los q hemos introducido
+      this.dataList.results.forEach(x => { // cuando encontramos la nave modificada cambiamos sus valores por los q hemos introducido
         if (x.model === this.detalle.model && x.name === this.detalle.name) {
           x.model = this.modeloEnvio;
           x.starship_class = this.starshipEnvio;
+          x.name = this.nameEnvio;
         }
       })
 
       //enviamos la nueva lista para tenerla actualizada en el subject y que se actualicen todos los componentes que están subscritos a esta lista.
-      this.shipsService.enviarShips(this.filterShip);
+      this.shipsService.enviarShips(this.dataList);
+      this.ngOnInit();
      
     }
   }

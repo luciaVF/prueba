@@ -44,17 +44,22 @@
       <div class="modal-body">
         <form [formGroup]="modifyForm" class="form">
             <input type="text"
-                   class="form-control"
-                   placeholder="Model"
-                   [(ngModel)]="modelo"
-                   formControlName="modelo" />
-          
-         
-            <input type="text"
-                   class="form-control"
-                   placeholder="Starship_class"
-                   [(ngModel)]="starship"
-                   formControlName="starship" />
+                 class="form-control"
+                 placeholder="Name"
+                 [(ngModel)]="name"
+                 formControlName="name" />
+          <input type="text"
+                 class="form-control"
+                 placeholder="Model"
+                 [(ngModel)]="modelo"
+                 formControlName="modelo" />
+
+
+          <input type="text"
+                 class="form-control"
+                 placeholder="Starship_class"
+                 [(ngModel)]="starship"
+                 formControlName="starship" />
         </form>
       </div>
       <div class="modal-footer">

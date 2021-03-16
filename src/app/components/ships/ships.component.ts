@@ -14,10 +14,9 @@ export class ShipsComponent implements OnInit {
   constructor( private shipsService: ShipsService) {}
 
   ngOnInit(): void {
-    this.shipsService.getShips().subscribe((ships) => {
-      this.dataList = ships;
-      this.shipsService.enviarShips(this.dataList); // enviamos el juego de datos y lo alamcenamos en el subject.
-      console.log('SHIPS -->', this.dataList.results)
-    })
-  }
+      this.shipsService.getShips().subscribe((ships) => {
+        this.dataList = ships;
+        console.log('SHIPS -->', this.dataList.results)
+      })
+    }
 }

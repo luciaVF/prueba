@@ -11,13 +11,15 @@ import { ShipsDetailsComponent } from '../ships/ships-details/ships-details.comp
 import { VehiclesModule } from '../vehicles/vehicles.module';
 import { PlanetsModule } from '../planets/planets.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShipDefinitivoComponent } from '../ship-definitivo/ship-definitivo.component';
 
 @NgModule({
   declarations: [
     ShipsComponent,
     ShipsDetailsComponent,
     PageOneComponent,
-    PageTwoComponent
+    PageTwoComponent,
+    ShipDefinitivoComponent
   ],
   imports: [
     CommonModule,
